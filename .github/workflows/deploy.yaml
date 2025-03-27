@@ -61,6 +61,7 @@ jobs:
           newgrp docker
           mkdir -p /home/ubuntu/node-app
           cd /home/ubuntu/node-app
+          docker ps -a --filter "name=node-app" --format "{{.Names}}" | grep -q node-app && docker stop node-app && docker rm node-app || true
           docker pull akanshachauhary/node-app:latest
           docker stop my-node-app || true
           docker rm my-node-app || true
