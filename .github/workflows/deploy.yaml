@@ -31,6 +31,9 @@ jobs:
       run: |
         docker build -t akanshachauhary/node-app .
 
+    - name: Debug Secrets
+      run: echo "Docker Username:${{ secrets.DOCKER_USERNAME }}"
+
     - name: Log in to Docker Hub
       uses: docker/login-action@v2  # Using the official Docker login action
       with:
