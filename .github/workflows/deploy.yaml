@@ -65,5 +65,5 @@ jobs:
           docker pull akanshachauhary/node-app:latest
           docker stop my-node-app || true
           docker rm my-node-app || true
-          docker run -d -p 80:3000 --name node-app akanshachauhary/node-app:latest || exit 1
+          docker run -d -p 8080:3000 --name node-app akanshachauhary/node-app:latest || exit 1
           docker system prune -af || true
